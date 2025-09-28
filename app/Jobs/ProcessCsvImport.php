@@ -242,7 +242,6 @@ class ProcessCsvImport implements ShouldQueue
         Log::error('CSV processing job failed', [
             'import_id' => $this->importSummaryId,
             'error' => $exception->getMessage(),
-
             'trace' => $exception->getTraceAsString()
         ]);
     }
