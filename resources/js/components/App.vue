@@ -10,6 +10,7 @@
       <div class="px-4 py-6 sm:px-0">
         <upload-component
           v-if="currentView === 'upload'"
+          :key="uploadKey"
           @upload-complete="handleUploadComplete"
         />
 
@@ -57,6 +58,7 @@ export default {
       currentView: 'upload',
       currentImportId: null,
       currentFilename: '',
+      uploadKey: 0,
     };
   },
   methods: {
@@ -75,6 +77,7 @@ export default {
       this.currentView = 'upload';
       this.currentImportId = null;
       this.currentFilename = '';
+      this.uploadKey += 1; // Force component recreation
     },
   },
 };
