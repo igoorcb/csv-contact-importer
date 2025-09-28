@@ -30,11 +30,19 @@ System for importing and managing contacts from CSV files.
 
 ### Installation
 ```bash
+# Copy environment file
+cp .env.example .env
+
+# Install PHP dependencies
+composer install
+
+# Generate application key
+php artisan key:generate
+
 # Start containers
 ./vendor/bin/sail up -d
 
-# Install dependencies
-./vendor/bin/sail composer install
+# Install Node dependencies
 ./vendor/bin/sail npm install
 
 # Run migrations
